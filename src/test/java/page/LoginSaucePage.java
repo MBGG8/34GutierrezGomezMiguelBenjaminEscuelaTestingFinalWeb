@@ -6,7 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("https://www.saucedemo.com")
-public class SaucePage extends PageObject {
+public class LoginSaucePage extends PageObject {
 
     @FindBy(id = "user-name")
     WebElementFacade username;
@@ -19,6 +19,9 @@ public class SaucePage extends PageObject {
 
     @FindBy(className = "title")
     WebElementFacade titulo;
+
+    @FindBy(xpath=  "//h3[@data-test='error']")
+    WebElementFacade error;
 
     public void enterUsername(String usernameText){
         username.type(usernameText);
@@ -33,6 +36,15 @@ public class SaucePage extends PageObject {
     }
 
     public void validarTituloProducts(){
-        titulo.shouldContainText("Productos");
+        titulo.shouldContainText("Products");
     }
+    public void validarUsuarioBloqueado(){
+        error.shouldContainText("locked out");
+    }
+
+    public void validarUsuarioInexistente(){
+        error.shouldContainText("do not match any user");
+    }
+
+
 }
