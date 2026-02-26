@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/SauceDemo.feature",
+        features = "src/test/resources/features/login.feature",
         glue = "stepdefinitions",
-        tags = "@SAUCE-1",
+        tags = "@Regression",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 
