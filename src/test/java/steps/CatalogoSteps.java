@@ -35,5 +35,13 @@ public class CatalogoSteps {
         Assert.assertTrue("Los productos NO están ordenados de mayor a menor",
                 catalogoPage.validarPreciosDescendentes());
     }
+    @Step
+    public void agregarProducto(String producto) {
+        catalogoPage.agregarProducto(producto);
+    }
 
+    @Step
+    public void removerProducto(String producto) {
+        catalogoPage.removerProducto(producto);
+    }
 }
