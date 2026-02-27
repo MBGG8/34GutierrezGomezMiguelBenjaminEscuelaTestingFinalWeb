@@ -47,15 +47,11 @@ public class CatalogoPage extends PageObject {
     public void agregarProducto(String nombreProducto) {
         String botonDataTest = "add-to-cart-" +
                 nombreProducto.toLowerCase().replace(" ", "-");
-        find(org.openqa.selenium.By.cssSelector("[data-test='" + botonDataTest + "']"))
-                .waitUntilClickable()
-                .click();
+        find(By.cssSelector("[data-test='" + botonDataTest + "']")).click();
     }
 
     public void removerProducto(String nombreProducto) {
         String botonDataTest = "remove-" + nombreProducto.toLowerCase().replace(" ", "-");
-        find(org.openqa.selenium.By.cssSelector("[data-test='" + botonDataTest + "']"))
-                .waitUntilClickable()
-                .click();
+        find(By.cssSelector("[data-test='" + botonDataTest + "']")).click();
     }
 }

@@ -41,6 +41,11 @@ public class CarritoSteps {
     }
 
     @Step
+    public void irCarrito(String producto) {
+        carritoPage.clickIconoCarrito();
+    }
+
+    @Step
     public void validarCarritoVacio() {
         Assert.assertTrue("El icono del carrito aún muestra una cantidad",
                 carritoPage.esCarritoVacio());
