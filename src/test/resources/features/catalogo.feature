@@ -1,8 +1,8 @@
 #language: es
 @Regression @Catalogo
-Característica: Filtros del catálogo de productos de SauceDemo
-  Como cliente
-  Quiero aplicar filtros de búsqueda en el catálogo de productos
+Característica: Busquedad de productos en el catálogo de SauceDemo
+  Como usuario
+  Quiero aplicar filtros de búsquedad en el catálogo de productos
   Para localizar el producto que estoy buscando
 
   Antecedentes:
@@ -18,4 +18,3 @@ Característica: Filtros del catálogo de productos de SauceDemo
   Escenario: Filtrar productos por precio de mayor a menor
     Cuando el usuario selecciona el filtro "Price (high to low)"
     Entonces los productos deben mostrarse ordenados por precio de mayor a menor
-

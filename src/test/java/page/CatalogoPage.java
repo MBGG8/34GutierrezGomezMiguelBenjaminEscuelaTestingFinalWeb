@@ -1,20 +1,18 @@
 package page;
 
 import net.serenitybdd.annotations.DefaultUrl;
-import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-
+import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-
 @DefaultUrl("https://www.saucedemo.com/inventory.html")
 public class CatalogoPage extends PageObject {
+
     @FindBy(xpath = "//select[@data-test='product-sort-container']")
     WebElementFacade filtroDropdown;
 
@@ -34,23 +32,30 @@ public class CatalogoPage extends PageObject {
 
     public boolean validarPreciosAscendentes() {
         List<Double> prices = obtenerPrecioDeProductos();
-
         List<Double> listaAscendente = new ArrayList<>(prices);
         Collections.sort(listaAscendente);
-
         return prices.equals(listaAscendente);
     }
 
     public boolean validarPreciosDescendentes() {
         List<Double> prices = obtenerPrecioDeProductos();
-
-        // Creamos una copia de la lista original y la ordenamos de mayor a menor
         List<Double> listaDescendente = new ArrayList<>(prices);
         Collections.sort(listaDescendente, Collections.reverseOrder());
-
-        // Comparamos si la lista original coincide con la lista ordenada ideal
         return prices.equals(listaDescendente);
     }
 
+    public void agregarProducto(String nombreProducto) {
+        String botonDataTest = "add-to-cart-" +
+                nombreProducto.toLowerCase().replace(" ", "-");
+        find(org.openqa.selenium.By.cssSelector("[data-test='" + botonDataTest + "']"))
+                .waitUntilClickable()
+                .click();
+    }
 
+    public void removerProducto(String nombreProducto) {
+        String botonDataTest = "remove-" + nombreProducto.toLowerCase().replace(" ", "-");
+        find(org.openqa.selenium.By.cssSelector("[data-test='" + botonDataTest + "']"))
+                .waitUntilClickable()
+                .click();
+    }
 }
