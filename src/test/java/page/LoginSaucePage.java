@@ -17,10 +17,19 @@ public class LoginSaucePage extends PageObject {
     @FindBy(id = "login-button")
     WebElementFacade loginButton;
 
+    @FindBy(id = "react-burger-menu-btn")
+    WebElementFacade IconMenu;
+
+    @FindBy(id = "logout_sidebar_link")
+    WebElementFacade logoutButton;
+
     @FindBy(className = "title")
     WebElementFacade titulo;
 
-    @FindBy(xpath=  "//h3[@data-test='error']")
+    @FindBy(xpath = "//div[@class='login_logo']")
+    WebElementFacade tituloLogoHome;
+
+    @FindBy(xpath =  "//h3[@data-test='error']")
     WebElementFacade error;
 
     public void enterUsername(String usernameText){
@@ -35,9 +44,22 @@ public class LoginSaucePage extends PageObject {
         loginButton.click();
     }
 
-    public void validarTituloProducts(){
-        titulo.shouldContainText("Products");
+    public void clickMenu(){
+        IconMenu.click();
     }
+
+    public void clickLogout(){
+        logoutButton.click();
+    }
+
+    public void validarTituloProducts(String title){
+        titulo.shouldContainText(title);
+    }
+
+    public void validarTituloLogoHome(String title){
+        tituloLogoHome.shouldContainText(title);
+    }
+
     public void validarUsuarioBloqueado(){
         error.shouldContainText("locked out");
     }
@@ -46,5 +68,7 @@ public class LoginSaucePage extends PageObject {
         error.shouldContainText("do not match any user");
     }
 
-
+    public void validarCamposVacios(String mensajeError){
+        error.shouldContainText(mensajeError);
+    }
 }
