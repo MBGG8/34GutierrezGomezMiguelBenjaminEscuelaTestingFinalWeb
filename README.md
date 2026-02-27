@@ -1,7 +1,7 @@
 
 # Automatización Web SauceDemo - Proyecto Final
 
-Este repositorio contiene el proyecto final para la **Escuela de Testing NTT DATA**. Consiste en la automatización de pruebas End-to-End (E2E) para la tienda virtual [SauceDemo](https://www.saucedemo.com/), abarcando diversos módulos y aplicando validaciones tanto para flujos exitosos (*Happy Paths*) como para flujos alternativos y de error (*Unhappy Paths* / *Flujos Alternos*).
+Este repositorio contiene el proyecto final para la **Escuela de Testing NTT DATA**. Consiste en la automatización de pruebas End-to-End (E2E) para la tienda virtual [SauceDemo](https://www.saucedemo.com/), abarcando diversos módulos y aplicando validaciones tanto para flujos exitosos (*Happy Paths*) como para flujos alternativos y de error (*Unhappy Paths*).
 
 ## Tecnologías y Herramientas Utilizadas
 * **Lenguaje:** Java 11+
