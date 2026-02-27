@@ -1,6 +1,6 @@
 #language: es
 
-@Regression
+@Regression @login
 Característica: Inicio de sesión en SauceDemo
   Como usuario
   Quiero iniciar sesión en la tienda de SauceDemo
