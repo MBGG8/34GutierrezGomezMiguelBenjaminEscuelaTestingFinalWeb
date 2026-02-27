@@ -46,7 +46,7 @@ Para obtener una copia local y ejecutar las pruebas, sigue estos pasos:
 1. Abre tu terminal o Git Bash.
 2. Clona este repositorio ejecutando el siguiente comando:
    ```bash 
-   git clone [https://github.com/MBGG8/34GutierrezGomezMiguelBenjaminEscuelaTestingFinalWeb.git](https://github.com/MBGG8/34GutierrezGomezMiguelBenjaminEscuelaTestingFinalWeb.git)
+   git clone https://github.com/MBGG8/34GutierrezGomezMiguelBenjaminEscuelaTestingFinalWeb.git
    ```
 ## Ejecución de las Pruebas
 
