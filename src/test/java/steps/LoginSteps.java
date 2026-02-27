@@ -20,13 +20,42 @@ public class LoginSteps {
 
         loginSaucePage.enterUsername(username);
         loginSaucePage.enterPassword(password);
-        loginSaucePage.clickLogin();
-
     }
 
     @Step
-    public void validarIngresoExitoso() {
-        loginSaucePage.validarTituloProducts();
+    public void ingresarUsername(String username){
+        loginSaucePage.enterUsername(username);
+    }
+
+    @Step
+    public void ingresarPassword(String password){
+        loginSaucePage.enterPassword(password);
+    }
+
+    @Step
+    public void presionarClicLogin() {
+        loginSaucePage.clickLogin();
+    }
+
+    @Step
+    public void presionarClicMenu() {
+        loginSaucePage.clickMenu();
+    }
+
+    @Step
+    public void presionarClicLogout() {
+        loginSaucePage.clickLogout();
+    }
+
+
+    @Step
+    public void validarIngresoExitoso(String title) {
+        loginSaucePage.validarTituloProducts(title);
+    }
+
+    @Step
+    public void validarLogoutExitoso(String title) {
+        loginSaucePage.validarTituloLogoHome(title);
     }
 
     @Step
@@ -37,5 +66,10 @@ public class LoginSteps {
     @Step
     public void validarUsuarioInexistente(){
         loginSaucePage.validarUsuarioInexistente();
+    }
+
+    @Step
+    public void validarCamposVacios(String mensajeError){
+        loginSaucePage.validarCamposVacios(mensajeError);
     }
 }
